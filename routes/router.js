@@ -6,6 +6,9 @@ import añadir from '../controller/addform.js';
 const app = express();
 const port = 3000;
 
+app.set('view engine', 'ejs');
+app.set('views', '../views');
+
 const messages = [
     {
         text: 'Hi there!',
@@ -22,17 +25,16 @@ const messages = [
 const rutas = Router();
 
 rutas.get('/', (req, res) => {
-    res.send(messages);
+    res.render('index', { messages });
 });
 
-rutas.get('/new', (req, res) => {
-    let nuevo = añadir(messages);
-    res.send(nuevo);
-});
+rutas.get('/new', (req, res) => {});
 
 rutas.get('/{*splat}', (req, res) => {
     res.status(404).send('Página no encontrada');
 });
+
+app.use('/', rutas);
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
