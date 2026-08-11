@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Principal</title>
+    </head>
+    <body>
+        <div class="caja">
+            <div class="encabezado">
+                <h1>Board Message</h1>
+                <button class="añadir_nuevo">+</button>
+            </div>
+            <div class="campo">
+                <% messages.forEach(mensaje => { %>
+
+                <div class="carta">
+                    <h2><%= mensaje.user %></h2>
+                    <p><%= mensaje.text %></p>
+                    <p><%= mensaje.added %></p>
+                </div>
+
+                <% }) %>
+            </div>
+        </div>
+    </body>
+</html>
