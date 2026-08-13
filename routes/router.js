@@ -1,10 +1,11 @@
 import express from 'express';
 import fs from 'fs';
 import { Router } from 'express';
-import añadir from '../controller/addform.js';
+import { añadir } from '../controller/addform.js';
 
 const app = express();
-const port = 3000;
+
+app.use(express.urlencoded({ extended: true }));
 
 app.set('view engine', 'ejs');
 app.set('views', '../views');
@@ -28,7 +29,15 @@ rutas.get('/', (req, res) => {
     res.render('index', { messages });
 });
 
-rutas.get('/new', (req, res) => {});
+rutas.get('/new', (req, res) => {
+    res.render('form');
+});
+
+rutas.post('/new', (req, res) => {
+    const { mensaje, autor } = req.body;
+    añadir(messages, mensaje, autor);
+    res.redirect('/');
+});
 
 rutas.get('/{*splat}', (req, res) => {
     res.status(404).send('Página no encontrada');
@@ -36,6 +45,4 @@ rutas.get('/{*splat}', (req, res) => {
 
 app.use('/', rutas);
 
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`);
-});
+export default app;
