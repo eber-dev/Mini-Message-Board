@@ -40,8 +40,8 @@ rutas.get('/new', (req, res) => {
 });
 
 rutas.post('/new', (req, res) => {
-    const { mensaje, autor } = req.body;
-    añadir(messages, mensaje, autor);
+    const { message, author } = req.body;
+    añadir(messages, message, author);
     res.redirect('/');
 });
 
