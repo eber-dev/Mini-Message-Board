@@ -1,13 +1,30 @@
-<h1>Nuevo mensaje</h1>
+<dialog id="modal">
+    <div class="header_form">
+        <p>Añadir mensaje</p>
+        <button id="cerrar_modal">X</button>
+    </div>
 
-<form method="post" action="/new">
-    <div>
-        <label for="author">Nombre:</label>
-        <input type="text" id="author" name="author" placeholder="Nombre" />
+    <div class="formulario">
+        <form method="post" action="/new" class="llenar">
+            <div class="info">
+                <label for="author">Nombre:</label>
+                <input
+                    type="text"
+                    id="author"
+                    name="author"
+                    placeholder="Nombre"
+                />
+            </div>
+            <div class="info">
+                <label for="message">Mensaje:</label>
+                <input
+                    type="text"
+                    id="message"
+                    name="message"
+                    placeholder="Mensaje"
+                />
+            </div>
+            <button type="submit">Enviar</button>
+        </form>
     </div>
-    <div>
-        <label for="message">Mensaje:</label>
-        <input type="text" id="message" name="message" placeholder="Mensaje" />
-    </div>
-    <button type="submit">Enviar</button>
-</form>
+</dialog>
