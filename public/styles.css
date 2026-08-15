@@ -75,6 +75,7 @@ body {
     align-content: center;
     flex-wrap: wrap;
     background-color: white;
+    padding-inline: 1.2rem;
 }
 
 .carta > h2 {
