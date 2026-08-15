@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/static', express.static(path.join(__dirname, '../public')));
 
 app.set('view engine', 'ejs');
-app.set('views', '../views');
+//app.set('views', '../views'); por si se quiere acceder a la carpeta views desde otro directorio
 
 const messages = [
     {
