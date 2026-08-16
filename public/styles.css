@@ -86,6 +86,7 @@ body {
 .carta > p {
     text-align: justify;
     color: black;
+    overflow-wrap: anywhere;
 }
 
 dialog {
