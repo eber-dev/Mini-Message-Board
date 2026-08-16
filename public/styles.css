@@ -60,7 +60,7 @@ body {
 .campo {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    grid-auto-rows: minmax(200px, auto);
+    grid-template-rows: repeat(3, auto);
     flex: 12;
     width: 100%;
     gap: 1rem;
